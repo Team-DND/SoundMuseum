@@ -7,6 +7,7 @@
 
 import AsyncDisplayKit
 import BonMot
+import DndUI
 import Then
 
 class MainViewController: BaseViewController {
@@ -22,28 +23,19 @@ class MainViewController: BaseViewController {
   }
 
 
-  // MARK: Constants
-
-  private enum Typo {
-    static let title = StringStyle(
-      .font(.systemFont(ofSize: 16)),
-      .color(.black)
-    )
-  }
-
-
   // MARK: View Lifecycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.node.backgroundColor = .white
+    self.node.backgroundColor = .gray900
+    self.navigationController?.navigationBar.isHidden = true
   }
 
 
   // MARK: UI
 
   private let textNode = ASTextNode().then {
-    $0.attributedText = __("Hello World").styled(with: Typo.title)
+    $0.attributedText = __("Hello World").styled(with: Typo.h1Font(color: .gray100))
   }
 
   // MARK: Layout
@@ -54,5 +46,13 @@ class MainViewController: BaseViewController {
       sizingOptions: .minimumXY,
       child: textNode
     )
+  }
+}
+
+import Testables
+
+extension MainViewController: Testable {
+  final class TestableKeys: TestableKey<Self> {
+    let textNode = \Self.textNode
   }
 }
