@@ -40,7 +40,7 @@ class BaseViewController: ASDKViewController<ASDisplayNode> {
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
       if #available(iOS 13, *) {
-          return .darkContent
+          return .lightContent
       } else {
           return .default
       }
