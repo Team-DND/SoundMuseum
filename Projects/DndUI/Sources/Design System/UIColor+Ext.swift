@@ -18,4 +18,7 @@ public extension UIColor {
   static let gray200 = UIColor(red: 221/255, green: 224/255, blue: 226/255, alpha: 1.0)
   static let gray100 = UIColor(red: 237/255, green: 239/255, blue: 240/255, alpha: 1.0)
   static let gray000 = UIColor(red: 248/255, green: 248/255, blue: 249/255, alpha: 1.0)
+  static let systemError =  UIColor(red: 196/255, green: 13/255, blue: 36/255, alpha: 1.0)
+  static let systemActive = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
+  static let systemWarm = UIColor(red: 232/255, green: 89/255, blue: 12/255, alpha: 1.0)
 }
