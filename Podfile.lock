@@ -418,6 +418,7 @@ PODS:
   - SwiftLint (0.40.3)
   - SwiftyJSON (5.0.0)
   - Swinject (2.7.1)
+  - Testables (0.2.0)
   - Texture (3.0.0):
     - Texture/AssetsLibrary (= 3.0.0)
     - Texture/Core (= 3.0.0)
@@ -468,6 +469,7 @@ DEPENDENCIES:
   - SwiftLint
   - SwiftyJSON
   - Swinject
+  - Testables
   - Texture
   - Then
 
@@ -519,6 +521,7 @@ SPEC REPOS:
     - SwiftLint
     - SwiftyJSON
     - Swinject
+    - Testables
     - Texture
     - Then
     - WeakMapTable
@@ -570,10 +573,11 @@ SPEC CHECKSUMS:
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  Testables: 7266773806c56e5f9d04d4098932d8b26869e644
   Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 327f92390e6d9db186b34f24dbcf48ef8370d82d
+PODFILE CHECKSUM: c6a2b08e70887b5f57be94b5fa0918df85a34545
 
 COCOAPODS: 1.10.0
