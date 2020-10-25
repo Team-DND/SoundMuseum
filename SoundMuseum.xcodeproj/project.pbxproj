@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BE53F7E254545C100DD7C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53F7D254545C100DD7C59 /* AppDelegate.swift */; };
+		5BE53F80254545C100DD7C59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53F7F254545C100DD7C59 /* SceneDelegate.swift */; };
+		5BE53F82254545C100DD7C59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53F81254545C100DD7C59 /* ViewController.swift */; };
+		5BE53F85254545C100DD7C59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE53F83254545C100DD7C59 /* Main.storyboard */; };
+		5BE53F87254545C300DD7C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE53F86254545C300DD7C59 /* Assets.xcassets */; };
+		5BE53F8A254545C300DD7C59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE53F88254545C300DD7C59 /* LaunchScreen.storyboard */; };
+		5BE53F95254545C300DD7C59 /* SoundMuseumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53F94254545C300DD7C59 /* SoundMuseumTests.swift */; };
+		5BE53FA0254545C300DD7C59 /* SoundMuseumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53F9F254545C300DD7C59 /* SoundMuseumUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BE53F91254545C300DD7C59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BE53F72254545C100DD7C59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BE53F79254545C100DD7C59;
+			remoteInfo = SoundMuseum;
+		};
+		5BE53F9C254545C300DD7C59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BE53F72254545C100DD7C59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BE53F79254545C100DD7C59;
+			remoteInfo = SoundMuseum;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5BE53F7A254545C100DD7C59 /* SoundMuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundMuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BE53F7D254545C100DD7C59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5BE53F7F254545C100DD7C59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5BE53F81254545C100DD7C59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BE53F84254545C100DD7C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5BE53F86254545C300DD7C59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BE53F89254545C300DD7C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5BE53F8B254545C300DD7C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BE53F90254545C300DD7C59 /* SoundMuseumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundMuseumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BE53F94254545C300DD7C59 /* SoundMuseumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMuseumTests.swift; sourceTree = "<group>"; };
+		5BE53F96254545C300DD7C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BE53F9B254545C300DD7C59 /* SoundMuseumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundMuseumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BE53F9F254545C300DD7C59 /* SoundMuseumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMuseumUITests.swift; sourceTree = "<group>"; };
+		5BE53FA1254545C300DD7C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BE53F77254545C100DD7C59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BE53F8D254545C300DD7C59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BE53F98254545C300DD7C59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BE53F71254545C100DD7C59 = {
+			isa = PBXGroup;
+			children = (
+				5BE53F7C254545C100DD7C59 /* SoundMuseum */,
+				5BE53F93254545C300DD7C59 /* SoundMuseumTests */,
+				5BE53F9E254545C300DD7C59 /* SoundMuseumUITests */,
+				5BE53F7B254545C100DD7C59 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5BE53F7B254545C100DD7C59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BE53F7A254545C100DD7C59 /* SoundMuseum.app */,
+				5BE53F90254545C300DD7C59 /* SoundMuseumTests.xctest */,
+				5BE53F9B254545C300DD7C59 /* SoundMuseumUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BE53F7C254545C100DD7C59 /* SoundMuseum */ = {
+			isa = PBXGroup;
+			children = (
+				5BE53F7D254545C100DD7C59 /* AppDelegate.swift */,
+				5BE53F7F254545C100DD7C59 /* SceneDelegate.swift */,
+				5BE53F81254545C100DD7C59 /* ViewController.swift */,
+				5BE53F83254545C100DD7C59 /* Main.storyboard */,
+				5BE53F86254545C300DD7C59 /* Assets.xcassets */,
+				5BE53F88254545C300DD7C59 /* LaunchScreen.storyboard */,
+				5BE53F8B254545C300DD7C59 /* Info.plist */,
+			);
+			path = SoundMuseum;
+			sourceTree = "<group>";
+		};
+		5BE53F93254545C300DD7C59 /* SoundMuseumTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BE53F94254545C300DD7C59 /* SoundMuseumTests.swift */,
+				5BE53F96254545C300DD7C59 /* Info.plist */,
+			);
+			path = SoundMuseumTests;
+			sourceTree = "<group>";
+		};
+		5BE53F9E254545C300DD7C59 /* SoundMuseumUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5BE53F9F254545C300DD7C59 /* SoundMuseumUITests.swift */,
+				5BE53FA1254545C300DD7C59 /* Info.plist */,
+			);
+			path = SoundMuseumUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BE53F79254545C100DD7C59 /* SoundMuseum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BE53FA4254545C300DD7C59 /* Build configuration list for PBXNativeTarget "SoundMuseum" */;
+			buildPhases = (
+				5BE53F76254545C100DD7C59 /* Sources */,
+				5BE53F77254545C100DD7C59 /* Frameworks */,
+				5BE53F78254545C100DD7C59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoundMuseum;
+			productName = SoundMuseum;
+			productReference = 5BE53F7A254545C100DD7C59 /* SoundMuseum.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BE53F8F254545C300DD7C59 /* SoundMuseumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BE53FA7254545C300DD7C59 /* Build configuration list for PBXNativeTarget "SoundMuseumTests" */;
+			buildPhases = (
+				5BE53F8C254545C300DD7C59 /* Sources */,
+				5BE53F8D254545C300DD7C59 /* Frameworks */,
+				5BE53F8E254545C300DD7C59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BE53F92254545C300DD7C59 /* PBXTargetDependency */,
+			);
+			name = SoundMuseumTests;
+			productName = SoundMuseumTests;
+			productReference = 5BE53F90254545C300DD7C59 /* SoundMuseumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5BE53F9A254545C300DD7C59 /* SoundMuseumUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BE53FAA254545C300DD7C59 /* Build configuration list for PBXNativeTarget "SoundMuseumUITests" */;
+			buildPhases = (
+				5BE53F97254545C300DD7C59 /* Sources */,
+				5BE53F98254545C300DD7C59 /* Frameworks */,
+				5BE53F99254545C300DD7C59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BE53F9D254545C300DD7C59 /* PBXTargetDependency */,
+			);
+			name = SoundMuseumUITests;
+			productName = SoundMuseumUITests;
+			productReference = 5BE53F9B254545C300DD7C59 /* SoundMuseumUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BE53F72254545C100DD7C59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					5BE53F79254545C100DD7C59 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					5BE53F8F254545C300DD7C59 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 5BE53F79254545C100DD7C59;
+					};
+					5BE53F9A254545C300DD7C59 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 5BE53F79254545C100DD7C59;
+					};
+				};
+			};
+			buildConfigurationList = 5BE53F75254545C100DD7C59 /* Build configuration list for PBXProject "SoundMuseum" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BE53F71254545C100DD7C59;
+			productRefGroup = 5BE53F7B254545C100DD7C59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BE53F79254545C100DD7C59 /* SoundMuseum */,
+				5BE53F8F254545C300DD7C59 /* SoundMuseumTests */,
+				5BE53F9A254545C300DD7C59 /* SoundMuseumUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BE53F78254545C100DD7C59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BE53F8A254545C300DD7C59 /* LaunchScreen.storyboard in Resources */,
+				5BE53F87254545C300DD7C59 /* Assets.xcassets in Resources */,
+				5BE53F85254545C100DD7C59 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BE53F8E254545C300DD7C59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BE53F99254545C300DD7C59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BE53F76254545C100DD7C59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BE53F82254545C100DD7C59 /* ViewController.swift in Sources */,
+				5BE53F7E254545C100DD7C59 /* AppDelegate.swift in Sources */,
+				5BE53F80254545C100DD7C59 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BE53F8C254545C300DD7C59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BE53F95254545C300DD7C59 /* SoundMuseumTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BE53F97254545C300DD7C59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BE53FA0254545C300DD7C59 /* SoundMuseumUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BE53F92254545C300DD7C59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BE53F79254545C100DD7C59 /* SoundMuseum */;
+			targetProxy = 5BE53F91254545C300DD7C59 /* PBXContainerItemProxy */;
+		};
+		5BE53F9D254545C300DD7C59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BE53F79254545C100DD7C59 /* SoundMuseum */;
+			targetProxy = 5BE53F9C254545C300DD7C59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5BE53F83254545C100DD7C59 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BE53F84254545C100DD7C59 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5BE53F88254545C300DD7C59 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BE53F89254545C300DD7C59 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BE53FA2254545C300DD7C59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5BE53FA3254545C300DD7C59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BE53FA5254545C300DD7C59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VP4B82579F;
+				INFOPLIST_FILE = SoundMuseum/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BE53FA6254545C300DD7C59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VP4B82579F;
+				INFOPLIST_FILE = SoundMuseum/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5BE53FA8254545C300DD7C59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VP4B82579F;
+				INFOPLIST_FILE = SoundMuseumTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundMuseum.app/SoundMuseum";
+			};
+			name = Debug;
+		};
+		5BE53FA9254545C300DD7C59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VP4B82579F;
+				INFOPLIST_FILE = SoundMuseumTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundMuseum.app/SoundMuseum";
+			};
+			name = Release;
+		};
+		5BE53FAB254545C300DD7C59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VP4B82579F;
+				INFOPLIST_FILE = SoundMuseumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SoundMuseum;
+			};
+			name = Debug;
+		};
+		5BE53FAC254545C300DD7C59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VP4B82579F;
+				INFOPLIST_FILE = SoundMuseumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SoundMuseum;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BE53F75254545C100DD7C59 /* Build configuration list for PBXProject "SoundMuseum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BE53FA2254545C300DD7C59 /* Debug */,
+				5BE53FA3254545C300DD7C59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BE53FA4254545C300DD7C59 /* Build configuration list for PBXNativeTarget "SoundMuseum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BE53FA5254545C300DD7C59 /* Debug */,
+				5BE53FA6254545C300DD7C59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BE53FA7254545C300DD7C59 /* Build configuration list for PBXNativeTarget "SoundMuseumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BE53FA8254545C300DD7C59 /* Debug */,
+				5BE53FA9254545C300DD7C59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BE53FAA254545C300DD7C59 /* Build configuration list for PBXNativeTarget "SoundMuseumUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BE53FAB254545C300DD7C59 /* Debug */,
+				5BE53FAC254545C300DD7C59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BE53F72254545C100DD7C59 /* Project object */;
+}
