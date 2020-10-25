@@ -3,141 +3,222 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5BE53F7E254545C100DD7C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53F7D254545C100DD7C59 /* AppDelegate.swift */; };
-		5BE53F80254545C100DD7C59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53F7F254545C100DD7C59 /* SceneDelegate.swift */; };
-		5BE53F82254545C100DD7C59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53F81254545C100DD7C59 /* ViewController.swift */; };
-		5BE53F85254545C100DD7C59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE53F83254545C100DD7C59 /* Main.storyboard */; };
-		5BE53F87254545C300DD7C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE53F86254545C300DD7C59 /* Assets.xcassets */; };
-		5BE53F8A254545C300DD7C59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE53F88254545C300DD7C59 /* LaunchScreen.storyboard */; };
-		5BE53F95254545C300DD7C59 /* SoundMuseumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53F94254545C300DD7C59 /* SoundMuseumTests.swift */; };
-		5BE53FA0254545C300DD7C59 /* SoundMuseumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53F9F254545C300DD7C59 /* SoundMuseumUITests.swift */; };
+		1FCF171FDFDCE09C213475BF /* Pods_SoundMuseum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B53F65BB4662E9CD4A5BCD8 /* Pods_SoundMuseum.framework */; };
+		555087DEF7ACF09D5E241464 /* Pods_SoundMuseumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476642ED743D8899F8A68461 /* Pods_SoundMuseumTests.framework */; };
+		5B45251725455E5200903090 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45251625455E5200903090 /* BaseViewController.swift */; };
+		5B45251D25455E6C00903090 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45251C25455E6C00903090 /* Logger.swift */; };
+		5B4525262545601800903090 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4525252545601800903090 /* LocalizedString.swift */; };
+		6AFE2ED01EC3C325BB44A6DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CC41ABB4CD9E0BA87D46FBB /* LaunchScreen.storyboard */; };
+		9D1565A17BDA6C524AA00C55 /* SoundMuseumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9EF9B86B7E5961C25B5627 /* SoundMuseumTests.swift */; };
+		A6FD2AF9E90A6E730C5114C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F2CDCF8225823FE61BE0E /* SceneDelegate.swift */; };
+		CF038CAECBBCEBED5A0A7209 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25FBD7E32611AA7A50F6337 /* Assets.xcassets */; };
+		E101746686D9E040551C9E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B1A65E48EF142AB896CFE /* AppDelegate.swift */; };
+		F45D2DE258F2F81A270EC2C2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49F4D0DB86DE1BA68E048C /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5BE53F91254545C300DD7C59 /* PBXContainerItemProxy */ = {
+		379A62824737EEFAF8F814CA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5BE53F72254545C100DD7C59 /* Project object */;
+			containerPortal = 8932CE1C9243AE5A264CC5D1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5BE53F79254545C100DD7C59;
-			remoteInfo = SoundMuseum;
-		};
-		5BE53F9C254545C300DD7C59 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5BE53F72254545C100DD7C59 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5BE53F79254545C100DD7C59;
+			remoteGlobalIDString = 7CEB259C187217174603F135;
 			remoteInfo = SoundMuseum;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5BE53F7A254545C100DD7C59 /* SoundMuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundMuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BE53F7D254545C100DD7C59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5BE53F7F254545C100DD7C59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5BE53F81254545C100DD7C59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5BE53F84254545C100DD7C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5BE53F86254545C300DD7C59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5BE53F89254545C300DD7C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5BE53F8B254545C300DD7C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BE53F90254545C300DD7C59 /* SoundMuseumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundMuseumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BE53F94254545C300DD7C59 /* SoundMuseumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMuseumTests.swift; sourceTree = "<group>"; };
-		5BE53F96254545C300DD7C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BE53F9B254545C300DD7C59 /* SoundMuseumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundMuseumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BE53F9F254545C300DD7C59 /* SoundMuseumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMuseumUITests.swift; sourceTree = "<group>"; };
-		5BE53FA1254545C300DD7C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BED611DA4BE3926C559E771 /* Pods-SoundMuseum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundMuseum.debug.xcconfig"; path = "Target Support Files/Pods-SoundMuseum/Pods-SoundMuseum.debug.xcconfig"; sourceTree = "<group>"; };
+		476642ED743D8899F8A68461 /* Pods_SoundMuseumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundMuseumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B45251625455E5200903090 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5B45251C25455E6C00903090 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		5B4525252545601800903090 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		723FA74B236D8128B8EFD58D /* SoundMuseumTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SoundMuseumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7326BE409D1C3B782003CAD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		796B1A65E48EF142AB896CFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7B49F4D0DB86DE1BA68E048C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		807F2CDCF8225823FE61BE0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8D9EF9B86B7E5961C25B5627 /* SoundMuseumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMuseumTests.swift; sourceTree = "<group>"; };
+		9B53F65BB4662E9CD4A5BCD8 /* Pods_SoundMuseum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundMuseum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB25BE0FD1C8139B946AFBDA /* Pods-SoundMuseumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundMuseumTests.debug.xcconfig"; path = "Target Support Files/Pods-SoundMuseumTests/Pods-SoundMuseumTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B27105F8A8D77379751E42DB /* Pods-SoundMuseumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundMuseumTests.release.xcconfig"; path = "Target Support Files/Pods-SoundMuseumTests/Pods-SoundMuseumTests.release.xcconfig"; sourceTree = "<group>"; };
+		B52B933172ABE89F87C3A5DC /* SoundMuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundMuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAA1D560D5B1B146CE24646D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D91DCD58E419609B987A3464 /* Pods-SoundMuseum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundMuseum.release.xcconfig"; path = "Target Support Files/Pods-SoundMuseum/Pods-SoundMuseum.release.xcconfig"; sourceTree = "<group>"; };
+		E25FBD7E32611AA7A50F6337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E9DE723AA1BAE22016E13BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5BE53F77254545C100DD7C59 /* Frameworks */ = {
+		2E3DAA66C2232025CDC3578E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FCF171FDFDCE09C213475BF /* Pods_SoundMuseum.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5BE53F8D254545C300DD7C59 /* Frameworks */ = {
+		841D2A13B07CD90693060A57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5BE53F98254545C300DD7C59 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				555087DEF7ACF09D5E241464 /* Pods_SoundMuseumTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5BE53F71254545C100DD7C59 = {
+		39BA04089930D4B36BC39768 /* SoundMuseumTests */ = {
 			isa = PBXGroup;
 			children = (
-				5BE53F7C254545C100DD7C59 /* SoundMuseum */,
-				5BE53F93254545C300DD7C59 /* SoundMuseumTests */,
-				5BE53F9E254545C300DD7C59 /* SoundMuseumUITests */,
-				5BE53F7B254545C100DD7C59 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		5BE53F7B254545C100DD7C59 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5BE53F7A254545C100DD7C59 /* SoundMuseum.app */,
-				5BE53F90254545C300DD7C59 /* SoundMuseumTests.xctest */,
-				5BE53F9B254545C300DD7C59 /* SoundMuseumUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5BE53F7C254545C100DD7C59 /* SoundMuseum */ = {
-			isa = PBXGroup;
-			children = (
-				5BE53F7D254545C100DD7C59 /* AppDelegate.swift */,
-				5BE53F7F254545C100DD7C59 /* SceneDelegate.swift */,
-				5BE53F81254545C100DD7C59 /* ViewController.swift */,
-				5BE53F83254545C100DD7C59 /* Main.storyboard */,
-				5BE53F86254545C300DD7C59 /* Assets.xcassets */,
-				5BE53F88254545C300DD7C59 /* LaunchScreen.storyboard */,
-				5BE53F8B254545C300DD7C59 /* Info.plist */,
-			);
-			path = SoundMuseum;
-			sourceTree = "<group>";
-		};
-		5BE53F93254545C300DD7C59 /* SoundMuseumTests */ = {
-			isa = PBXGroup;
-			children = (
-				5BE53F94254545C300DD7C59 /* SoundMuseumTests.swift */,
-				5BE53F96254545C300DD7C59 /* Info.plist */,
+				7326BE409D1C3B782003CAD9 /* Info.plist */,
+				8D9EF9B86B7E5961C25B5627 /* SoundMuseumTests.swift */,
 			);
 			path = SoundMuseumTests;
 			sourceTree = "<group>";
 		};
-		5BE53F9E254545C300DD7C59 /* SoundMuseumUITests */ = {
+		5B45251425455E3000903090 /* Domian */ = {
 			isa = PBXGroup;
 			children = (
-				5BE53F9F254545C300DD7C59 /* SoundMuseumUITests.swift */,
-				5BE53FA1254545C300DD7C59 /* Info.plist */,
+				5B45252025455E8B00903090 /* Main */,
 			);
-			path = SoundMuseumUITests;
+			path = Domian;
+			sourceTree = "<group>";
+		};
+		5B45251525455E3900903090 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5B45251625455E5200903090 /* BaseViewController.swift */,
+				5B45251C25455E6C00903090 /* Logger.swift */,
+				5B4525252545601800903090 /* LocalizedString.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5B45252025455E8B00903090 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7B49F4D0DB86DE1BA68E048C /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5F27F96375B0A8D5A849A3D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B53F65BB4662E9CD4A5BCD8 /* Pods_SoundMuseum.framework */,
+				476642ED743D8899F8A68461 /* Pods_SoundMuseumTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6601152FDD09308398077295 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E25FBD7E32611AA7A50F6337 /* Assets.xcassets */,
+				6CC41ABB4CD9E0BA87D46FBB /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		75E899C8C852DA8230E77984 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5B45251425455E3000903090 /* Domian */,
+				5B45251525455E3900903090 /* Utils */,
+				796B1A65E48EF142AB896CFE /* AppDelegate.swift */,
+				807F2CDCF8225823FE61BE0E /* SceneDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		7B0F197F9B17CA8B62B35352 = {
+			isa = PBXGroup;
+			children = (
+				99458A1499CCD35125F6A8A6 /* SoundMuseum */,
+				39BA04089930D4B36BC39768 /* SoundMuseumTests */,
+				E1F821768694639BBEA999EA /* Products */,
+				FB755B86FC8D701842BAACB9 /* Pods */,
+				5F27F96375B0A8D5A849A3D9 /* Frameworks */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+		};
+		99458A1499CCD35125F6A8A6 /* SoundMuseum */ = {
+			isa = PBXGroup;
+			children = (
+				6601152FDD09308398077295 /* Resources */,
+				75E899C8C852DA8230E77984 /* Sources */,
+				C64BA254D148414B4BA9A3DB /* Supporting Files */,
+			);
+			path = SoundMuseum;
+			sourceTree = "<group>";
+		};
+		C64BA254D148414B4BA9A3DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9DE723AA1BAE22016E13BC4 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1F821768694639BBEA999EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B52B933172ABE89F87C3A5DC /* SoundMuseum.app */,
+				723FA74B236D8128B8EFD58D /* SoundMuseumTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB755B86FC8D701842BAACB9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BED611DA4BE3926C559E771 /* Pods-SoundMuseum.debug.xcconfig */,
+				D91DCD58E419609B987A3464 /* Pods-SoundMuseum.release.xcconfig */,
+				AB25BE0FD1C8139B946AFBDA /* Pods-SoundMuseumTests.debug.xcconfig */,
+				B27105F8A8D77379751E42DB /* Pods-SoundMuseumTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5BE53F79254545C100DD7C59 /* SoundMuseum */ = {
+		43A62890CDC456E47D00E3E4 /* SoundMuseumTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5BE53FA4254545C300DD7C59 /* Build configuration list for PBXNativeTarget "SoundMuseum" */;
+			buildConfigurationList = 9D75673343169587FD3FEF92 /* Build configuration list for PBXNativeTarget "SoundMuseumTests" */;
 			buildPhases = (
-				5BE53F76254545C100DD7C59 /* Sources */,
-				5BE53F77254545C100DD7C59 /* Frameworks */,
-				5BE53F78254545C100DD7C59 /* Resources */,
+				8E870CC8EAD19571D57245B4 /* [CP] Check Pods Manifest.lock */,
+				82EEAEE7DA2115FF05C6522D /* Sources */,
+				841D2A13B07CD90693060A57 /* Frameworks */,
+				D010094B1B73E5E7BA2D71A2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				834055F6B6D782E46265FD0C /* PBXTargetDependency */,
+			);
+			name = SoundMuseumTests;
+			productName = SoundMuseumTests;
+			productReference = 723FA74B236D8128B8EFD58D /* SoundMuseumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7CEB259C187217174603F135 /* SoundMuseum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5167B94ABB3416091B07309B /* Build configuration list for PBXNativeTarget "SoundMuseum" */;
+			buildPhases = (
+				885B3E6B9149AB3F6CEE97AF /* [CP] Check Pods Manifest.lock */,
+				FC0962A765D36A973E3A2DB5 /* SwiftLint */,
+				E247B7BE36E5F4EAE0C50609 /* Sources */,
+				133EB033DFDB18B40EE6550A /* Resources */,
+				2E3DAA66C2232025CDC3578E /* Frameworks */,
+				8148A4D31F5C62341CDF28B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -145,169 +226,184 @@
 			);
 			name = SoundMuseum;
 			productName = SoundMuseum;
-			productReference = 5BE53F7A254545C100DD7C59 /* SoundMuseum.app */;
+			productReference = B52B933172ABE89F87C3A5DC /* SoundMuseum.app */;
 			productType = "com.apple.product-type.application";
-		};
-		5BE53F8F254545C300DD7C59 /* SoundMuseumTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5BE53FA7254545C300DD7C59 /* Build configuration list for PBXNativeTarget "SoundMuseumTests" */;
-			buildPhases = (
-				5BE53F8C254545C300DD7C59 /* Sources */,
-				5BE53F8D254545C300DD7C59 /* Frameworks */,
-				5BE53F8E254545C300DD7C59 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5BE53F92254545C300DD7C59 /* PBXTargetDependency */,
-			);
-			name = SoundMuseumTests;
-			productName = SoundMuseumTests;
-			productReference = 5BE53F90254545C300DD7C59 /* SoundMuseumTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		5BE53F9A254545C300DD7C59 /* SoundMuseumUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5BE53FAA254545C300DD7C59 /* Build configuration list for PBXNativeTarget "SoundMuseumUITests" */;
-			buildPhases = (
-				5BE53F97254545C300DD7C59 /* Sources */,
-				5BE53F98254545C300DD7C59 /* Frameworks */,
-				5BE53F99254545C300DD7C59 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5BE53F9D254545C300DD7C59 /* PBXTargetDependency */,
-			);
-			name = SoundMuseumUITests;
-			productName = SoundMuseumUITests;
-			productReference = 5BE53F9B254545C300DD7C59 /* SoundMuseumUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5BE53F72254545C100DD7C59 /* Project object */ = {
+		8932CE1C9243AE5A264CC5D1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1210;
-				LastUpgradeCheck = 1210;
-				TargetAttributes = {
-					5BE53F79254545C100DD7C59 = {
-						CreatedOnToolsVersion = 12.1;
-					};
-					5BE53F8F254545C300DD7C59 = {
-						CreatedOnToolsVersion = 12.1;
-						TestTargetID = 5BE53F79254545C100DD7C59;
-					};
-					5BE53F9A254545C300DD7C59 = {
-						CreatedOnToolsVersion = 12.1;
-						TestTargetID = 5BE53F79254545C100DD7C59;
-					};
-				};
+				LastUpgradeCheck = 1020;
 			};
-			buildConfigurationList = 5BE53F75254545C100DD7C59 /* Build configuration list for PBXProject "SoundMuseum" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = 84DAC51AFDF1ADA1910D0380 /* Build configuration list for PBXProject "SoundMuseum" */;
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 5BE53F71254545C100DD7C59;
-			productRefGroup = 5BE53F7B254545C100DD7C59 /* Products */;
+			mainGroup = 7B0F197F9B17CA8B62B35352;
+			productRefGroup = E1F821768694639BBEA999EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5BE53F79254545C100DD7C59 /* SoundMuseum */,
-				5BE53F8F254545C300DD7C59 /* SoundMuseumTests */,
-				5BE53F9A254545C300DD7C59 /* SoundMuseumUITests */,
+				7CEB259C187217174603F135 /* SoundMuseum */,
+				43A62890CDC456E47D00E3E4 /* SoundMuseumTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5BE53F78254545C100DD7C59 /* Resources */ = {
+		133EB033DFDB18B40EE6550A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BE53F8A254545C300DD7C59 /* LaunchScreen.storyboard in Resources */,
-				5BE53F87254545C300DD7C59 /* Assets.xcassets in Resources */,
-				5BE53F85254545C100DD7C59 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5BE53F8E254545C300DD7C59 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5BE53F99254545C300DD7C59 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				CF038CAECBBCEBED5A0A7209 /* Assets.xcassets in Resources */,
+				6AFE2ED01EC3C325BB44A6DC /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8148A4D31F5C62341CDF28B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoundMuseum/Pods-SoundMuseum-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoundMuseum/Pods-SoundMuseum-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoundMuseum/Pods-SoundMuseum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		885B3E6B9149AB3F6CEE97AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoundMuseum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E870CC8EAD19571D57245B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoundMuseumTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D010094B1B73E5E7BA2D71A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoundMuseumTests/Pods-SoundMuseumTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoundMuseumTests/Pods-SoundMuseumTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoundMuseumTests/Pods-SoundMuseumTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC0962A765D36A973E3A2DB5 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint --config .swiftlint.yml\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		5BE53F76254545C100DD7C59 /* Sources */ = {
+		82EEAEE7DA2115FF05C6522D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BE53F82254545C100DD7C59 /* ViewController.swift in Sources */,
-				5BE53F7E254545C100DD7C59 /* AppDelegate.swift in Sources */,
-				5BE53F80254545C100DD7C59 /* SceneDelegate.swift in Sources */,
+				9D1565A17BDA6C524AA00C55 /* SoundMuseumTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5BE53F8C254545C300DD7C59 /* Sources */ = {
+		E247B7BE36E5F4EAE0C50609 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BE53F95254545C300DD7C59 /* SoundMuseumTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5BE53F97254545C300DD7C59 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5BE53FA0254545C300DD7C59 /* SoundMuseumUITests.swift in Sources */,
+				5B45251D25455E6C00903090 /* Logger.swift in Sources */,
+				E101746686D9E040551C9E08 /* AppDelegate.swift in Sources */,
+				5B4525262545601800903090 /* LocalizedString.swift in Sources */,
+				5B45251725455E5200903090 /* BaseViewController.swift in Sources */,
+				A6FD2AF9E90A6E730C5114C2 /* SceneDelegate.swift in Sources */,
+				F45D2DE258F2F81A270EC2C2 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5BE53F92254545C300DD7C59 /* PBXTargetDependency */ = {
+		834055F6B6D782E46265FD0C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5BE53F79254545C100DD7C59 /* SoundMuseum */;
-			targetProxy = 5BE53F91254545C300DD7C59 /* PBXContainerItemProxy */;
-		};
-		5BE53F9D254545C300DD7C59 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5BE53F79254545C100DD7C59 /* SoundMuseum */;
-			targetProxy = 5BE53F9C254545C300DD7C59 /* PBXContainerItemProxy */;
+			target = 7CEB259C187217174603F135 /* SoundMuseum */;
+			targetProxy = 379A62824737EEFAF8F814CA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5BE53F83254545C100DD7C59 /* Main.storyboard */ = {
+		6CC41ABB4CD9E0BA87D46FBB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5BE53F84254545C100DD7C59 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5BE53F88254545C300DD7C59 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5BE53F89254545C300DD7C59 /* Base */,
+				BAA1D560D5B1B146CE24646D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -315,7 +411,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		5BE53FA2254545C300DD7C59 /* Debug */ = {
+		3D64163A9CCA25B114D74D4A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -325,7 +421,6 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -341,68 +436,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		5BE53FA3254545C300DD7C59 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -421,178 +454,186 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		5BE53FA5254545C300DD7C59 /* Debug */ = {
+		4D99CE7A6C85F03883B689EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D91DCD58E419609B987A3464 /* Pods-SoundMuseum.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VP4B82579F;
-				INFOPLIST_FILE = SoundMuseum/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "SoundMuseum/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseum;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		5BE53FA6254545C300DD7C59 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VP4B82579F;
-				INFOPLIST_FILE = SoundMuseum/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
+				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseum;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		5BE53FA8254545C300DD7C59 /* Debug */ = {
+		524A3F7CC51264759E6997E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6A299D6F198310A5D66F51B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B27105F8A8D77379751E42DB /* Pods-SoundMuseumTests.release.xcconfig */;
+			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VP4B82579F;
 				INFOPLIST_FILE = SoundMuseumTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseumTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundMuseum.app/SoundMuseum";
 			};
+			name = Release;
+		};
+		DD48FCD1F62578FE7DD7887E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BED611DA4BE3926C559E771 /* Pods-SoundMuseum.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "SoundMuseum/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseum;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
 			name = Debug;
 		};
-		5BE53FA9254545C300DD7C59 /* Release */ = {
+		EC1009897D8DEFEC7DD841F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB25BE0FD1C8139B946AFBDA /* Pods-SoundMuseumTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VP4B82579F;
 				INFOPLIST_FILE = SoundMuseumTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseumTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundMuseum.app/SoundMuseum";
 			};
-			name = Release;
-		};
-		5BE53FAB254545C300DD7C59 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VP4B82579F;
-				INFOPLIST_FILE = SoundMuseumUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseumUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SoundMuseum;
-			};
 			name = Debug;
-		};
-		5BE53FAC254545C300DD7C59 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VP4B82579F;
-				INFOPLIST_FILE = SoundMuseumUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.dnd.SoundMuseumUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SoundMuseum;
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5BE53F75254545C100DD7C59 /* Build configuration list for PBXProject "SoundMuseum" */ = {
+		5167B94ABB3416091B07309B /* Build configuration list for PBXNativeTarget "SoundMuseum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5BE53FA2254545C300DD7C59 /* Debug */,
-				5BE53FA3254545C300DD7C59 /* Release */,
+				DD48FCD1F62578FE7DD7887E /* Debug */,
+				4D99CE7A6C85F03883B689EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		5BE53FA4254545C300DD7C59 /* Build configuration list for PBXNativeTarget "SoundMuseum" */ = {
+		84DAC51AFDF1ADA1910D0380 /* Build configuration list for PBXProject "SoundMuseum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5BE53FA5254545C300DD7C59 /* Debug */,
-				5BE53FA6254545C300DD7C59 /* Release */,
+				524A3F7CC51264759E6997E1 /* Debug */,
+				3D64163A9CCA25B114D74D4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		5BE53FA7254545C300DD7C59 /* Build configuration list for PBXNativeTarget "SoundMuseumTests" */ = {
+		9D75673343169587FD3FEF92 /* Build configuration list for PBXNativeTarget "SoundMuseumTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5BE53FA8254545C300DD7C59 /* Debug */,
-				5BE53FA9254545C300DD7C59 /* Release */,
+				EC1009897D8DEFEC7DD841F7 /* Debug */,
+				6A299D6F198310A5D66F51B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5BE53FAA254545C300DD7C59 /* Build configuration list for PBXNativeTarget "SoundMuseumUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5BE53FAB254545C300DD7C59 /* Debug */,
-				5BE53FAC254545C300DD7C59 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5BE53F72254545C100DD7C59 /* Project object */;
+	rootObject = 8932CE1C9243AE5A264CC5D1 /* Project object */;
 }

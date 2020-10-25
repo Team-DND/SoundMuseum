@@ -1,0 +1,27 @@
+build
+*.dSYM.zip
+*.ipa
+Snappy/build
+**/xcuserdata
+**/xcshareddata
+.DS_Store
+.bundle
+*.xcodeproj
+*.xcworkspace
+*.pbxuser
+*.mode1v3
+Pods
+vendor
+SSDebugOptions.h
+fastlane/README.md
+fastlane/report.xml
+.env
+SoundMuseum/GoogleService-Info.plist
+# Carthage
+Carthage/Checkouts
+Carthage/Build/
+
+/Crashlytics
+
+# XcodeGen
+Projects/projects.yml
