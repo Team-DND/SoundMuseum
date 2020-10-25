@@ -1,4 +1,7 @@
 name: SoundMuseum # The name of the App
+include:
+ - Projects/DndUI/project.yml
+ - Projects/templates.yml
 options: # Some general settings for the projectproject.yml
   minimumXcodeGenVersion: 2.14.0
   createIntermediateGroups: true # If the folders are nested, also nest the groups in Xcode
@@ -15,7 +18,7 @@ targets:
     deploymentTarget: "13.0"
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: kr.co.dnd
-      INFOPLIST_FILE: SoundMuseum/Supporting Files/Info.plist
+      INFOPLIST_FILE: Projects/SoundMuseum/Supporting Files/Info.plist
     sources:
       - path: Sources
       - path: Resources
@@ -23,13 +26,15 @@ targets:
         excludes:
           - Info.plist
     sources:  
-      - path: SoundMuseum
+      - path: Projects/SoundMuseum
     scheme: 
       testTargets:
         - SoundMuseumTests
       gatherCoverageData: true
     settings:
       OTHER_LDFLAGS: $(inherited) -all_load
+    dependencies:
+      - target: DndUI
     preBuildScripts:
       - name: SwiftLint
         script: |
@@ -39,9 +44,9 @@ targets:
     platform: iOS
     deploymentTarget: "13.0"
     settings:
-      INFOPLIST_FILE: SoundMuseumTests/Info.plist
+      INFOPLIST_FILE: Projects/SoundMuseumTests/Info.plist
     sources:
-      - path: SoundMuseumTests
+      - path: Projects/SoundMuseumTests/Sources
     dependencies:
       - target: SoundMuseum
     scheme: 

@@ -1,0 +1,19 @@
+targets:
+  DndUI:
+    templates: [Framework]
+
+  DndUITests:
+    templates: [UnitTest]
+    templateAttributes:
+      testTarget: DndUI
+    dependencies:
+      - target: SoundMuseumTests
+
+schemes:
+  AllTests:
+    build:
+      targets:
+        DndUI: test
+    test:
+      targets:
+        - DndUITests
