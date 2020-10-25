@@ -31,6 +31,7 @@ pod 'BonMot'
 # Misc.
 pod 'SwiftyJSON'
 pod 'Then'
+pod 'Testables'
 
 #Logging
 pod 'CocoaLumberjack/Swift'
