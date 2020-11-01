@@ -1,4 +1,6 @@
-import StyleShareTest
+import Quick
+import Nimble
+import SoundMuseumTests
 
 @testable import DndUI
 
