@@ -18,12 +18,12 @@ final class MainViewControllerSpec: QuickSpec {
       return viewController
     }
 
-    it("텍스트 노트를 표시합니다") {
+    it("콜렉션 노트를 표시합니다") {
       // given
       let viewController = createViewController()
 
       // then
-      expect(viewController.testables[\.textNode]).to(beADescendantOf(viewController.node))
+      expect(viewController.testables[\.collectionNode]).to(beADescendantOf(viewController.node))
     }
   }
 }

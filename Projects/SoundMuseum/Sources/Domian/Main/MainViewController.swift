@@ -12,7 +12,23 @@ import Then
 
 class MainViewController: BaseViewController {
 
+  // MARK: Constants
+
+  private enum Metric {
+    static let itemSpacing = 15.f
+    static let padding = 12.f
+  }
+
+
   // MARK: Properties
+
+
+  // MARK: UI
+
+  private let collectionNode = ASCollectionNode(collectionViewLayout: UICollectionViewFlowLayout()).then {
+    $0.backgroundColor = .clear
+    $0.alwaysBounceVertical = true
+  }
 
 
   // MARK: Initializing
@@ -29,23 +45,54 @@ class MainViewController: BaseViewController {
     super.viewDidLoad()
     self.node.backgroundColor = .gray900
     self.navigationController?.navigationBar.isHidden = true
+    self.collectionNode.dataSource = self
+    self.collectionNode.delegate = self
   }
 
-
-  // MARK: UI
-
-  private let textNode = ASTextNode().then {
-    $0.attributedText = __("Hello World").styled(with: Typo.h1Font(color: .gray100))
-  }
 
   // MARK: Layout
 
   override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-    return ASCenterLayoutSpec(
-      centeringOptions: .XY,
-      sizingOptions: .minimumXY,
-      child: textNode
+    return ASInsetLayoutSpec(
+      insets: UIEdgeInsets(top: 40, left: Metric.padding, bottom: 0, right: Metric.padding),
+      child: self.collectionNode
     )
+  }
+}
+
+extension MainViewController: UICollectionViewDelegateFlowLayout, ASCollectionDelegate {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    minimumLineSpacingForSectionAt section: Int
+  ) -> CGFloat {
+    return 20
+  }
+}
+
+extension MainViewController: ASCollectionDataSource {
+  func collectionNode(
+    _ collectionNode: ASCollectionNode,
+    numberOfItemsInSection section: Int
+  ) -> Int {
+    return 40
+  }
+
+  func collectionNode(
+    _ collectionNode: ASCollectionNode,
+    nodeBlockForItemAt indexPath: IndexPath
+  ) -> ASCellNodeBlock {
+    let sectionWidth = collectionNode.constrainedSizeForCalculatedLayout.max.width
+    return {
+      let width = floor((sectionWidth - Metric.itemSpacing) / 2)
+      let node = ImageMediumCell()
+      node.titleTextAlignment = .center
+      node.titleText = "Test"
+      node.titleTextColor = .gray100
+      return ASCellNode(wrapping: node).styled {
+        $0.preferredLayoutSize.width = ASDimension(unit: .points, value: width)
+      }
+    }
   }
 }
 
@@ -53,6 +100,6 @@ import Testables
 
 extension MainViewController: Testable {
   final class TestableKeys: TestableKey<Self> {
-    let textNode = \Self.textNode
+    let collectionNode = \Self.collectionNode
   }
 }
