@@ -48,16 +48,17 @@ pod 'SwiftLint'
 def testable_target(name)
   target name do
     yield if block_given?
+
+  target "#{name}Tests" do
+      pod 'Quick', :binary => true
+      pod 'Nimble', :binary => true
+      pod 'Stubber', :binary => true
+      pod 'RxTest', :binary => true
+    end
   end
 end
 
 testable_target 'SoundMuseum'
-testable_target 'SoundMuseumTests' do
-  pod 'Stubber'
-  pod 'Quick'
-  pod 'Nimble'
-  pod 'RxTest'
-end
 testable_target 'DndUI'
 
 post_install do |installer|
