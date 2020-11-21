@@ -16,7 +16,7 @@ SSDebugOptions.h
 fastlane/README.md
 fastlane/report.xml
 .env
-SoundMuseum/GoogleService-Info.plist
+Projects/SoundMuseum/Supporting Files/GoogleService-Info.plist
 # Carthage
 Carthage/Checkouts
 Carthage/Build/
