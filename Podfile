@@ -36,17 +36,18 @@ pod 'Testables'
 #Logging
 pod 'CocoaLumberjack/Swift'
 
-#Firebase
-pod 'Firebase/Analytics'
-pod 'RxFirebase/Firestore'
-pod 'Firebase/Firestore'
-pod 'Firebase/Messaging'
-
 # Lint
 pod 'SwiftLint'
 
 def testable_target(name)
   target name do
+    if name == 'SoundMuseum'
+      #Firebase
+      pod 'Firebase/Analytics'
+      pod 'RxFirebase/Firestore'
+      pod 'Firebase/Firestore'
+      pod 'Firebase/Messaging'
+    end
     yield if block_given?
 
   target "#{name}Tests" do
