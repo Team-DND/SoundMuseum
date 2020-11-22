@@ -8,14 +8,24 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+  private let dependency: AppDependency
   var window: UIWindow?
+
+  private override init() {
+    self.dependency = CompositionRoot.resolve()
+    super.init()
+  }
+
+  init(dependency: AppDependency) {
+    self.dependency = dependency
+    super.init()
+  }
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.windowScene = windowScene
-    let mainViewController = UINavigationController(rootViewController: MainViewController())
+    let mainViewController = UINavigationController(rootViewController: self.dependency.rootViewController)
     window?.rootViewController = mainViewController
     window?.makeKeyAndVisible()
   }
