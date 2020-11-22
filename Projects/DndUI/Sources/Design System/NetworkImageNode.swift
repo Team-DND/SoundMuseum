@@ -14,7 +14,7 @@ public final class NetworkImageNode: ASNetworkImageNode {
       downloader: ASPINRemoteImageDownloader.shared()
     )
     self.isLayerBacked = true
-    self.backgroundColor = .white
+    self.backgroundColor = .clear
     self.isOpaque = true
   }
 
