@@ -6,11 +6,24 @@
 //
 
 import AsyncDisplayKit
+import ReactorKit
+import RxViewController
 import BonMot
 import DndUI
 import Then
+import Pure
 
-class MainViewController: BaseViewController {
+class MainViewController: BaseViewController, View, FactoryModule {
+
+  // MARK: Module
+
+  struct Dependency {
+  }
+
+  struct Payload {
+    let reactor: MainViewReactor
+  }
+
 
   // MARK: Constants
 
@@ -22,6 +35,9 @@ class MainViewController: BaseViewController {
 
   // MARK: Properties
 
+  private let dependency: Dependency
+  private let payload: Payload
+  private lazy var dataSource = self.createDataSource()
 
   // MARK: UI
 
@@ -33,9 +49,38 @@ class MainViewController: BaseViewController {
 
   // MARK: Initializing
 
-  override init() {
+  required init(dependency: Dependency, payload: Payload) {
+    defer { self.reactor = payload.reactor }
+    self.dependency = dependency
+    self.payload = payload
     super.init()
     self.node.backgroundColor = .white
+  }
+
+  private func createDataSource() -> CollectionNodeDataSource<SoundListViewSection> {
+    let dataSource = CollectionNodeDataSource<SoundListViewSection>(
+      configureCellBlock: { [weak self] dataSource, collectionNode, indexPath, sectionItem in
+        let sectionWidth = collectionNode.constrainedSizeForCalculatedLayout.max.width
+        switch sectionItem {
+        case let .sounds(sound):
+          return {
+            let width = floor((sectionWidth - Metric.itemSpacing) / 2)
+            let node = ImageMediumCell {
+            }
+            node.titleTextAlignment = .center
+            node.titleText = sound.name
+            log.debug(sound.imgURL)
+            node.imageUrl = URL(string: sound.imgURL)
+            node.titleTextColor = .gray100
+            return ASCellNode(wrapping: node).styled {
+              $0.preferredLayoutSize.width = ASDimension(unit: .points, value: width)
+            }
+          }
+        case .activityIndicator:
+          return { ASCellNode() }
+        }
+      })
+    return dataSource
   }
 
 
@@ -45,11 +90,23 @@ class MainViewController: BaseViewController {
     super.viewDidLoad()
     self.node.backgroundColor = .gray900
     self.navigationController?.navigationBar.isHidden = true
-    self.collectionNode.dataSource = self
     self.collectionNode.delegate = self
   }
 
 
+  // MARK: Binding
+
+  func bind(reactor: MainViewReactor) {
+    self.rx.viewDidLoad
+      .map { Reactor.Action.initialize }
+      .bind(to: reactor.action)
+      .disposed(by: self.disposeBag)
+
+    reactor.state.map { $0.sections }
+      .distinctUntilChanged()
+      .bind(to: self.collectionNode.rx.items(dataSource: self.dataSource))
+      .disposed(by: self.disposeBag)
+  }
   // MARK: Layout
 
   override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
@@ -70,32 +127,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout, ASCollectionDe
   }
 }
 
-extension MainViewController: ASCollectionDataSource {
-  func collectionNode(
-    _ collectionNode: ASCollectionNode,
-    numberOfItemsInSection section: Int
-  ) -> Int {
-    return 40
-  }
-
-  func collectionNode(
-    _ collectionNode: ASCollectionNode,
-    nodeBlockForItemAt indexPath: IndexPath
-  ) -> ASCellNodeBlock {
-    let sectionWidth = collectionNode.constrainedSizeForCalculatedLayout.max.width
-    return {
-      let width = floor((sectionWidth - Metric.itemSpacing) / 2)
-      let node = ImageMediumCell()
-      node.titleTextAlignment = .center
-      node.titleText = "Test"
-      node.titleTextColor = .gray100
-      return ASCellNode(wrapping: node).styled {
-        $0.preferredLayoutSize.width = ASDimension(unit: .points, value: width)
-      }
-    }
-  }
-}
-
+#if DEBUG
 import Testables
 
 extension MainViewController: Testable {
@@ -103,3 +135,4 @@ extension MainViewController: Testable {
     let collectionNode = \Self.collectionNode
   }
 }
+#endif
