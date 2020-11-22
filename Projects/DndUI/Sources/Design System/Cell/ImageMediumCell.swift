@@ -6,6 +6,8 @@
 //
 
 import AsyncDisplayKit
+import RxSwift
+import RxTexture2
 import Then
 import BonMot
 
@@ -48,6 +50,8 @@ public final class ImageMediumCell: ASControlNode {
       self.updateMainText()
     }
   }
+  public var didTapButton: () -> Void
+  private let disposeBag = DisposeBag()
 
   // MARK: UI
 
@@ -56,6 +60,7 @@ public final class ImageMediumCell: ASControlNode {
     $0.placeholderFadeDuration = 0.3
     $0.contentMode = .scaleAspectFill
     $0.cornerRadius = 4
+    $0.clipsToBounds = true
   }
   private var titleTextNode = TextNode().then {
     $0.backgroundColor = .clear
@@ -71,16 +76,28 @@ public final class ImageMediumCell: ASControlNode {
 
   // MARK: Initializing
 
-  public override init() {
+  public init(
+    didTapButton: @escaping () -> Void = { }
+  ) {
     self.titleTextAlignment = .left
     self.mainTextAlignment = .left
+    self.didTapButton = didTapButton
     super.init()
     self.backgroundColor = .clear
     self.automaticallyManagesSubnodes = true
+    self.bindTap()
   }
 
 
   // MARK: Configuring
+
+  private func bindTap() {
+    self.rx.tap
+      .subscribe(onNext: { [weak self] _ in
+        self?.didTapButton()
+      })
+      .disposed(by: self.disposeBag)
+  }
 
   private func updateImage() {
     if let url = self.imageUrl {
