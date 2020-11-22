@@ -384,6 +384,8 @@ PODS:
   - ReactorKit (2.1.0):
     - RxSwift (~> 5.0)
     - WeakMapTable (~> 1.1)
+  - RxBlocking (5.1.1):
+    - RxSwift (~> 5)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -457,6 +459,7 @@ DEPENDENCIES:
   - Pure/Stub
   - Quick
   - ReactorKit
+  - RxBlocking
   - RxCocoa
   - RxDataSources
   - RxDataSources-Texture
@@ -507,6 +510,7 @@ SPEC REPOS:
     - Pure
     - Quick
     - ReactorKit
+    - RxBlocking
     - RxCocoa
     - RxDataSources
     - RxDataSources-Texture
@@ -559,6 +563,7 @@ SPEC CHECKSUMS:
   Pure: da92a66df10fc902db96290083c121f84ee73d6f
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
   ReactorKit: 12a93358c554bb3f167b16b14c40374fa9cd5acd
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxDataSources-Texture: b2db41c0ece2366dbd0189ef2903076c37d62dab
@@ -578,6 +583,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 020ac262b01da32cba49b7bd3216d453f4834f2a
+PODFILE CHECKSUM: 780dd1e35960b897f3749d5363f11bf6f493694d
 
 COCOAPODS: 1.10.0

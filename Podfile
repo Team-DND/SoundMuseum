@@ -47,6 +47,7 @@ def testable_target(name)
       pod 'RxFirebase/Firestore'
       pod 'Firebase/Firestore'
       pod 'Firebase/Messaging'
+      pod 'RxFirebase/Firestore'
     end
     yield if block_given?
 
@@ -55,6 +56,7 @@ def testable_target(name)
       pod 'Nimble', :binary => true
       pod 'Stubber', :binary => true
       pod 'RxTest', :binary => true
+      pod 'RxBlocking', :binary => true
     end
   end
 end
