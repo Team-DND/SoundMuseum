@@ -11,8 +11,8 @@ import RxSwift
 
 extension ASNetworkImageNode {
   public func setImage(with url: URL) {
-    self.url = url
     self.clearImageAndURL()
+    self.url = url
   }
 
   private func clearImageAndURL() {
