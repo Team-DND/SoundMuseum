@@ -8,6 +8,7 @@
 import AsyncDisplayKit
 import ReactorKit
 import RxViewController
+import AVFoundation
 import BonMot
 import DndUI
 import Then
@@ -37,7 +38,11 @@ class MainViewController: BaseViewController, View, FactoryModule {
 
   private let dependency: Dependency
   private let payload: Payload
+  private var currentAudioURL: URL?
+  private var player: AVPlayer!
+  private var playerObserver: Any?
   private lazy var dataSource = self.createDataSource()
+
 
   // MARK: UI
 
@@ -66,6 +71,8 @@ class MainViewController: BaseViewController, View, FactoryModule {
           return {
             let width = floor((sectionWidth - Metric.itemSpacing) / 2)
             let node = ImageMediumCell {
+              log.debug("tap tap \(sound.soundURL) \(sound.name)")
+              self?.playSound(url: URL(string: sound.soundURL))
             }
             node.titleTextAlignment = .center
             node.titleText = sound.name
@@ -107,6 +114,49 @@ class MainViewController: BaseViewController, View, FactoryModule {
       .bind(to: self.collectionNode.rx.items(dataSource: self.dataSource))
       .disposed(by: self.disposeBag)
   }
+
+  private func playSound(url: URL?) {
+    guard let url = url else { return }
+    let playerItem = AVPlayerItem(url: url)
+    if let observer = self.playerObserver {
+      self.player.removeTimeObserver(observer)
+      self.playerObserver = nil
+    }
+    self.player = AVPlayer(playerItem: playerItem)
+    player.play()
+    self.addPeriodicTimeObserver()
+  }
+
+  private func addPeriodicTimeObserver() {
+    // Invoke callback every second
+    let interval = CMTime(seconds:1.0, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+
+    // Queue on which to invoke the callback
+    let mainQueue = DispatchQueue.main
+
+    // Keep the reference to remove
+    self.playerObserver = player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue) { [weak self] progressTime in
+      if let totalDuration = self?.player?.currentItem?.duration, !CMTimeGetSeconds(totalDuration).isNaN {
+        let totalSeconds = Int(CMTimeGetSeconds(totalDuration))
+        let currentSeconds = Int(CMTimeGetSeconds(progressTime))
+        if currentSeconds == totalSeconds {
+          self?.player.seek(to: CMTime.zero)
+          self?.player.play()
+        }
+      }
+    }
+  }
+
+  private func secondsToHoursMinutesSecondsString(seconds: Int) -> String {
+    let (_, minutes, seconds) = secondsToHoursMinutesSeconds(seconds: seconds)
+    return "\(String(format: "%02d", minutes)):\(String(format: "%02d", seconds))"
+  }
+
+  private func secondsToHoursMinutesSeconds(seconds: Int) -> (Int, Int, Int) {
+    return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+  }
+
+
   // MARK: Layout
 
   override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
