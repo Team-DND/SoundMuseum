@@ -50,6 +50,9 @@ class MainViewController: BaseViewController, View, FactoryModule {
     $0.backgroundColor = .clear
     $0.alwaysBounceVertical = true
   }
+  private let audioPlayerNode = AudioPlayerNode().then {
+    $0.isHidden = true
+  }
 
 
   // MARK: Initializing
@@ -68,11 +71,20 @@ class MainViewController: BaseViewController, View, FactoryModule {
         let sectionWidth = collectionNode.constrainedSizeForCalculatedLayout.max.width
         switch sectionItem {
         case let .sounds(sound):
-          return {
+          return { [weak self] in
+            guard let self = self else { return ASCellNode() }
             let width = floor((sectionWidth - Metric.itemSpacing) / 2)
             let node = ImageMediumCell {
-              log.debug("tap tap \(sound.soundURL) \(sound.name)")
-              self?.playSound(url: URL(string: sound.soundURL))
+              self.playSound(url: URL(string: sound.soundURL))
+              if self.player.isPlaying {
+                self.audioPlayerNode.hidePlayerView()
+              }
+              DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.audioPlayerNode.showPlayerView(
+                  titleImageUrl: URL(string: sound.imgURL),
+                  title: sound.name
+                )
+              }
             }
             node.titleTextAlignment = .center
             node.titleText = sound.name
@@ -136,13 +148,15 @@ class MainViewController: BaseViewController, View, FactoryModule {
 
     // Keep the reference to remove
     self.playerObserver = player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue) { [weak self] progressTime in
-      if let totalDuration = self?.player?.currentItem?.duration, !CMTimeGetSeconds(totalDuration).isNaN {
+      guard let self = self else { return }
+      if let totalDuration = self.player?.currentItem?.duration, !CMTimeGetSeconds(totalDuration).isNaN {
         let totalSeconds = Int(CMTimeGetSeconds(totalDuration))
         let currentSeconds = Int(CMTimeGetSeconds(progressTime))
         if currentSeconds == totalSeconds {
-          self?.player.seek(to: CMTime.zero)
-          self?.player.play()
+          self.player.seek(to: CMTime.zero)
+          self.player.play()
         }
+        self.audioPlayerNode.currentPlayTime = self.secondsToHoursMinutesSecondsString(seconds: currentSeconds)
       }
     }
   }
@@ -160,9 +174,31 @@ class MainViewController: BaseViewController, View, FactoryModule {
   // MARK: Layout
 
   override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-    return ASInsetLayoutSpec(
+    let mainContentLayout = ASInsetLayoutSpec(
       insets: UIEdgeInsets(top: 40, left: Metric.padding, bottom: 0, right: Metric.padding),
       child: self.collectionNode
+    )
+    return ASOverlayLayoutSpec(
+      child: mainContentLayout,
+      overlay: self.playerLayoutElement()
+    )
+  }
+
+  private func playerLayoutElement() -> ASLayoutElement {
+    let playerLayout = ASInsetLayoutSpec(
+      insets: UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20),
+      child: self.audioPlayerNode
+    )
+
+    return ASStackLayoutSpec(
+      direction: .vertical,
+      spacing: 0,
+      justifyContent: .end,
+      alignItems: .center,
+      children: [
+        playerLayout,
+        SpacingLayout(height: 34),
+      ]
     )
   }
 }
@@ -183,6 +219,7 @@ import Testables
 extension MainViewController: Testable {
   final class TestableKeys: TestableKey<Self> {
     let collectionNode = \Self.collectionNode
+    let audioPlayerNode = \Self.audioPlayerNode
   }
 }
 #endif

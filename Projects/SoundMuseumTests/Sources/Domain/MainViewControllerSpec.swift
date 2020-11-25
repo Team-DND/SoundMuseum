@@ -36,6 +36,14 @@ final class MainViewControllerSpec: QuickSpec {
       expect(viewController.testables[\.collectionNode]).to(beADescendantOf(viewController.node))
     }
 
+    it("사운드 플레이어를 표시합니다.") {
+      // given
+      let viewController = createViewController()
+
+      // then
+      expect(viewController.testables[\.audioPlayerNode]).to(beADescendantOf(viewController.node))
+    }
+
     context("뷰가 로드되었을 때") {
       it("initialize 액션을 전송합니다.") {
         let viewController = createViewController()
