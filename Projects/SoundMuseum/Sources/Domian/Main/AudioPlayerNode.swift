@@ -1,0 +1,186 @@
+//
+//  AudioPlayerNode.swift
+//  SoundMuseum
+//
+//  Created by Gunter on 2020/11/25.
+//
+
+import AsyncDisplayKit
+import DndUI
+import RxSwift
+import RxCocoa
+
+final class AudioPlayerNode: ASDisplayNode {
+
+  // MARK: Constants
+
+  private enum Metric {
+    static let titleImageSize = 40.f
+    static let playControlButtonSize = 24.f
+    static let audioPlayerNodeHeightSize = 72.f
+  }
+
+
+  // MARK: UI
+
+  private let titleImageNode = NetworkImageNode().then {
+    $0.placeholderFadeDuration = 0.3
+    $0.placeholderColor = .gray900
+    $0.cornerRadius = Metric.titleImageSize / 2
+  }
+  private let titleTextNode = TextNode().then {
+    $0.backgroundColor = .clear
+  }
+  private let currentTimeTextNode = TextNode().then {
+    $0.backgroundColor = .clear
+  }
+  private let playControlButtonNode = ASButtonNode().then {
+    $0.setImage(UIImage(named: "ic_pause_circle"), for: .normal)
+    $0.setImage(UIImage(named: "ic_pause_circle"), for: .selected)
+    $0.imageNode.imageModificationBlock = ASImageNodeTintColorModificationBlock(.white)
+    $0.cornerRadius = Metric.playControlButtonSize / 2
+  }
+
+
+  // MARK: Properties
+
+  var isPlay: Bool {
+    didSet {
+      self.playControlButtonNode.isSelected = !isPlay
+    }
+  }
+  var currentPlayTime: String {
+    didSet {
+      self.configureCurrentTimeTextNode()
+    }
+  }
+
+
+  // MARK: Initializing
+
+  override init() {
+    self.isPlay = false
+    self.currentPlayTime = "00:00"
+    super.init()
+    self.automaticallyManagesSubnodes = true
+    self.backgroundColor = UIColor.gray800.withAlphaComponent(0.25)
+    self.layer.cornerRadius = 8
+  }
+
+  func showPlayerView(
+    titleImageUrl: URL?,
+    title: String
+  ) {
+    guard self.isHidden else { return }
+    self.isHidden = false
+    let startY = UIScreen.main.bounds.height
+    let bottomOffset = 34.f
+    let endY = startY - Metric.audioPlayerNodeHeightSize - bottomOffset
+    self.frame.origin.y = startY
+    if let url = titleImageUrl {
+      self.titleImageNode.setImage(with: url)
+    }
+    self.currentPlayTime = "00:00"
+    self.titleTextNode.attributedText = title.styled(with: Typo.h3Font(color: .gray100))
+
+    ASPerformBlockOnMainThread {
+      self.layer.removeAllAnimations()
+      UIView.animate(
+        withDuration: 0.5,
+        delay: 0,
+        usingSpringWithDamping: 1,
+        initialSpringVelocity: 0,
+        options: [.curveEaseOut, .allowUserInteraction],
+        animations: {
+          self.frame.origin.y = endY
+        },
+        completion: nil
+      )
+    }
+  }
+
+  func hidePlayerView() {
+    guard !self.isHidden else { return }
+    let startY = UIScreen.main.bounds.height
+
+    ASPerformBlockOnMainThread {
+      self.layer.removeAllAnimations()
+      UIView.animate(
+        withDuration: 0.5,
+        delay: 0,
+        usingSpringWithDamping: 1,
+        initialSpringVelocity: 0,
+        options: [.curveEaseOut, .allowUserInteraction],
+        animations: {
+          self.frame.origin.y = startY
+        },
+        completion: { _ in
+          self.isHidden = true
+        }
+      )
+    }
+  }
+
+  private func configureCurrentTimeTextNode() {
+    self.currentTimeTextNode.attributedText = self.currentPlayTime.styled(with: Typo.labelFont(color: .gray600))
+  }
+
+
+  // MARK: Layout
+
+  override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+    return ASInsetLayoutSpec(
+      insets: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
+      child: self.playerLayoutElement()
+    )
+  }
+
+  private func playerLayoutElement() -> ASLayoutElement {
+    let spacing = UIScreen.main.bounds.width - 244
+    log.debug(spacing)
+    let titleImageAndtitleAndCurrentTextLayout = ASStackLayoutSpec(
+      direction: .horizontal,
+      spacing: 0,
+      justifyContent: .start,
+      alignItems: .center,
+      children: [
+        self.titleImageNode.styled {
+          $0.preferredSize.width = Metric.titleImageSize
+          $0.preferredSize.height = Metric.titleImageSize
+        },
+        SpacingLayout(width: 12),
+        self.titleAndCurrentTextLayoutElement(),
+      ]
+    )
+
+    return ASStackLayoutSpec(
+      direction: .horizontal,
+      spacing: 0,
+      justifyContent: .start,
+      alignItems: .center,
+      children: [
+        titleImageAndtitleAndCurrentTextLayout,
+        SpacingLayout(width: spacing),
+        self.playControlButtonNode.styled {
+          $0.preferredSize.width = Metric.playControlButtonSize
+          $0.preferredSize.height = Metric.playControlButtonSize
+        }
+      ]
+    )
+  }
+
+  private func titleAndCurrentTextLayoutElement() -> ASLayoutElement {
+    return ASStackLayoutSpec(
+      direction: .vertical,
+      spacing: 3,
+      justifyContent: .start,
+      alignItems: .stretch,
+      children: [
+        self.titleTextNode.styled {
+          $0.width = 100
+        },
+        self.currentTimeTextNode,
+      ]
+    )
+  }
+}
