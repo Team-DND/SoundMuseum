@@ -1,7 +1,7 @@
 # SoundMuseum
 ASMR 저장소
 
-<img width="300" src="README_FILES/1page.jpg"/> <img width="300" src="README_FILES/2page.jpg"/> <img width="300" src="README_FILES/3page.jpg"/> 
+<img width="200" src="README_FILES/1page.jpg"/> <img width="200" src="README_FILES/2page.jpg"/> <img width="200" src="README_FILES/3page.jpg"/> 
 
 ## Built with
 
