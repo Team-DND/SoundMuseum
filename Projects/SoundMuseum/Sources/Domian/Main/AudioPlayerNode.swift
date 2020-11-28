@@ -69,7 +69,7 @@ final class AudioPlayerNode: ASDisplayNode {
     self.currentPlayTime = "00:00"
     super.init()
     self.automaticallyManagesSubnodes = true
-    self.backgroundColor = UIColor.gray800.withAlphaComponent(0.25)
+    self.backgroundColor = UIColor.gray800.withAlphaComponent(0.9)
     self.layer.cornerRadius = 8
   }
 
