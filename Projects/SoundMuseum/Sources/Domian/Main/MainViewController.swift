@@ -155,6 +155,7 @@ class MainViewController: BaseViewController, View, FactoryModule {
       self.playerObserver = nil
     }
     self.player = AVPlayer(playerItem: playerItem)
+    self.audioPlayerNode.isPlay = true
     self.audioPlayerNode.isLoading = true
     self.player.play()
     self.setupRemoteTransportControls()
