@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import GoogleMobileAds
 import AVFoundation
 
 @main
@@ -15,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     FirebaseApp.configure()
+    GADMobileAds.sharedInstance().start(completionHandler: nil)
     do {
       try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
       try AVAudioSession.sharedInstance().setActive(true)

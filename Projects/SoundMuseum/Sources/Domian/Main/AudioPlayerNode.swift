@@ -106,6 +106,17 @@ final class AudioPlayerNode: ASDisplayNode {
     }
   }
 
+  func setPlayerView(
+    titleImageUrl: URL?,
+    title: String
+  ) {
+    self.currentPlayTime = "00:00"
+    self.titleTextNode.attributedText = title.styled(with: Typo.h3Font(color: .gray100))
+    if let url = titleImageUrl {
+      self.titleImageNode.setImage(with: url)
+    }
+  }
+
   func hidePlayerView() {
     guard !self.isHidden else { return }
     let startY = UIScreen.main.bounds.height

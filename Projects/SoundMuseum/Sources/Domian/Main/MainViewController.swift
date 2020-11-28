@@ -13,6 +13,7 @@ import BonMot
 import DndUI
 import Then
 import Pure
+import GoogleMobileAds
 
 class MainViewController: BaseViewController, View, FactoryModule {
 
@@ -41,6 +42,9 @@ class MainViewController: BaseViewController, View, FactoryModule {
   private var currentAudioURL: URL?
   private var player: AVPlayer!
   private var playerObserver: Any?
+  private var isFirstPlay: Bool = true
+  private var currentSound: Sound?
+  private var interstitial: GADInterstitial!
   private lazy var dataSource = self.createDataSource()
 
 
@@ -75,20 +79,20 @@ class MainViewController: BaseViewController, View, FactoryModule {
             guard let self = self else { return ASCellNode() }
             let width = floor((sectionWidth - Metric.itemSpacing) / 2)
             let node = ImageMediumCell {
-              self.playSound(url: URL(string: sound.soundURL))
-              if self.player.isPlaying {
-                self.audioPlayerNode.hidePlayerView()
-              }
-              DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+              self.currentSound = sound
+              if self.isFirstPlay {
+                self.playSound(url: URL(string: sound.soundURL))
                 self.audioPlayerNode.showPlayerView(
                   titleImageUrl: URL(string: sound.imgURL),
                   title: sound.name
                 )
+              } else {
+                self.showAdMob()
               }
+              self.isFirstPlay = false
             }
             node.titleTextAlignment = .center
             node.titleText = sound.name
-            log.debug(sound.imgURL)
             node.imageUrl = URL(string: sound.imgURL)
             node.titleTextColor = .gray100
             return ASCellNode(wrapping: node).styled {
@@ -110,6 +114,14 @@ class MainViewController: BaseViewController, View, FactoryModule {
     self.node.backgroundColor = .gray900
     self.navigationController?.navigationBar.isHidden = true
     self.collectionNode.delegate = self
+    interstitial = createAndLoadInterstitial()
+  }
+
+  private func createAndLoadInterstitial() -> GADInterstitial {
+    let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+    interstitial.delegate = self
+    interstitial.load(GADRequest())
+    return interstitial
   }
 
 
@@ -158,13 +170,8 @@ class MainViewController: BaseViewController, View, FactoryModule {
   }
 
   private func addPeriodicTimeObserver() {
-    // Invoke callback every second
     let interval = CMTime(seconds:1.0, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
-
-    // Queue on which to invoke the callback
     let mainQueue = DispatchQueue.main
-
-    // Keep the reference to remove
     self.playerObserver = player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue) { [weak self] progressTime in
       guard let self = self else { return }
       if let totalDuration = self.player?.currentItem?.duration, !CMTimeGetSeconds(totalDuration).isNaN {
@@ -189,6 +196,13 @@ class MainViewController: BaseViewController, View, FactoryModule {
 
   private func secondsToHoursMinutesSeconds(seconds: Int) -> (Int, Int, Int) {
     return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+  }
+
+  private func showAdMob() {
+    if interstitial.isReady {
+      self.player.pause()
+      interstitial.present(fromRootViewController: self)
+    }
   }
 
 
@@ -231,6 +245,19 @@ extension MainViewController: UICollectionViewDelegateFlowLayout, ASCollectionDe
     minimumLineSpacingForSectionAt section: Int
   ) -> CGFloat {
     return 20
+  }
+}
+
+extension MainViewController: GADInterstitialDelegate {
+  func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+    interstitial = createAndLoadInterstitial()
+    if let sound = self.currentSound {
+      self.playSound(url: URL(string: sound.soundURL))
+      self.audioPlayerNode.setPlayerView(
+        titleImageUrl: URL(string: sound.imgURL),
+        title: sound.name
+      )
+    }
   }
 }
 
