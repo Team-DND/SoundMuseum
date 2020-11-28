@@ -125,6 +125,13 @@ class MainViewController: BaseViewController, View, FactoryModule {
       .distinctUntilChanged()
       .bind(to: self.collectionNode.rx.items(dataSource: self.dataSource))
       .disposed(by: self.disposeBag)
+
+    self.audioPlayerNode.rx.didTogglePlayControlButton
+      .subscribe(onNext: { [weak self] isPlay in
+        guard let self = self else { return }
+        isPlay ? self.pauseSound() : self.playSound()
+      })
+      .disposed(by: self.disposeBag)
   }
 
   private func playSound(url: URL?) {
@@ -135,8 +142,18 @@ class MainViewController: BaseViewController, View, FactoryModule {
       self.playerObserver = nil
     }
     self.player = AVPlayer(playerItem: playerItem)
-    player.play()
+    self.player.play()
     self.addPeriodicTimeObserver()
+  }
+
+  private func playSound() {
+    self.player.play()
+    self.audioPlayerNode.isPlay = true
+  }
+
+  private func pauseSound() {
+    self.player.pause()
+    self.audioPlayerNode.isPlay = false
   }
 
   private func addPeriodicTimeObserver() {

@@ -34,8 +34,8 @@ final class AudioPlayerNode: ASDisplayNode {
   private let currentTimeTextNode = TextNode().then {
     $0.backgroundColor = .clear
   }
-  private let playControlButtonNode = ASButtonNode().then {
-    $0.setImage(UIImage(named: "ic_pause_circle"), for: .normal)
+  fileprivate let playControlButtonNode = ASButtonNode().then {
+    $0.setImage(UIImage(named: "ic_play_circle"), for: .normal)
     $0.setImage(UIImage(named: "ic_pause_circle"), for: .selected)
     $0.imageNode.imageModificationBlock = ASImageNodeTintColorModificationBlock(.white)
     $0.cornerRadius = Metric.playControlButtonSize / 2
@@ -44,9 +44,9 @@ final class AudioPlayerNode: ASDisplayNode {
 
   // MARK: Properties
 
-  var isPlay: Bool {
+  var isPlay: Bool? {
     didSet {
-      self.playControlButtonNode.isSelected = !isPlay
+      self.playControlButtonNode.isSelected = isPlay ?? true
     }
   }
   var currentPlayTime: String {
@@ -59,7 +59,6 @@ final class AudioPlayerNode: ASDisplayNode {
   // MARK: Initializing
 
   override init() {
-    self.isPlay = false
     self.currentPlayTime = "00:00"
     super.init()
     self.automaticallyManagesSubnodes = true
@@ -73,6 +72,7 @@ final class AudioPlayerNode: ASDisplayNode {
   ) {
     guard self.isHidden else { return }
     self.isHidden = false
+    self.isPlay = true
     let startY = UIScreen.main.bounds.height
     let bottomOffset = 34.f
     let endY = startY - Metric.audioPlayerNodeHeightSize - bottomOffset
@@ -182,5 +182,13 @@ final class AudioPlayerNode: ASDisplayNode {
         self.currentTimeTextNode,
       ]
     )
+  }
+}
+
+extension Reactive where Base: AudioPlayerNode {
+  var didTogglePlayControlButton: ControlEvent<Bool> {
+    let source = self.base.playControlButtonNode.rx.tap
+      .map { base.isPlay ?? true }
+    return ControlEvent(events: source)
   }
 }
