@@ -60,6 +60,7 @@ final class MainViewReactor: Reactor, FactoryModule {
       guard !self.currentState.isLoading else { return Observable.empty() }
       return Observable.concat([
         Observable.just(Mutation.setLoading(true)),
+        Observable.just(.updateSections),
         self.fetchSounds(),
         Observable.just(Mutation.setLoading(false)),
         Observable.just(.updateSections),

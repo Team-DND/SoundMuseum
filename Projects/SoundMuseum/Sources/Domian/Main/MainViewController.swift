@@ -96,7 +96,7 @@ class MainViewController: BaseViewController, View, FactoryModule {
             }
           }
         case .activityIndicator:
-          return { ASCellNode() }
+          return { ActivityIndicatorCellNode() }
         }
       })
     return dataSource
