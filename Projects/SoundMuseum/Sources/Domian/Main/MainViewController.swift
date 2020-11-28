@@ -142,6 +142,7 @@ class MainViewController: BaseViewController, View, FactoryModule {
       self.playerObserver = nil
     }
     self.player = AVPlayer(playerItem: playerItem)
+    self.audioPlayerNode.isLoading = true
     self.player.play()
     self.addPeriodicTimeObserver()
   }
@@ -167,6 +168,9 @@ class MainViewController: BaseViewController, View, FactoryModule {
     self.playerObserver = player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue) { [weak self] progressTime in
       guard let self = self else { return }
       if let totalDuration = self.player?.currentItem?.duration, !CMTimeGetSeconds(totalDuration).isNaN {
+        if self.audioPlayerNode.isLoading {
+          self.audioPlayerNode.isLoading = false
+        }
         let totalSeconds = Int(CMTimeGetSeconds(totalDuration))
         let currentSeconds = Int(CMTimeGetSeconds(progressTime))
         if currentSeconds == totalSeconds {

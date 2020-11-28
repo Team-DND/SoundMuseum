@@ -40,6 +40,7 @@ final class AudioPlayerNode: ASDisplayNode {
     $0.imageNode.imageModificationBlock = ASImageNodeTintColorModificationBlock(.white)
     $0.cornerRadius = Metric.playControlButtonSize / 2
   }
+  private let indicatorNode = ActivityIndicatorNode(style: .medium)
 
 
   // MARK: Properties
@@ -52,6 +53,12 @@ final class AudioPlayerNode: ASDisplayNode {
   var currentPlayTime: String {
     didSet {
       self.configureCurrentTimeTextNode()
+    }
+  }
+  var isLoading: Bool = false {
+    didSet {
+      self.playControlButtonNode.isHidden = isLoading
+      self.setNeedsLayout()
     }
   }
 
@@ -137,20 +144,32 @@ final class AudioPlayerNode: ASDisplayNode {
 
   private func playerLayoutElement() -> ASLayoutElement {
     let spacing = UIScreen.main.bounds.width - 244
-    log.debug(spacing)
+    let layoutElement: ASLayoutElement?
+
+    if self.isLoading {
+      layoutElement = self.indicatorNode.styled {
+        $0.preferredSize.width = Metric.titleImageSize
+        $0.preferredSize.height = Metric.titleImageSize
+      }
+      self.indicatorNode.startAnimating()
+    } else {
+      layoutElement = self.titleImageNode.styled {
+        $0.preferredSize.width = Metric.titleImageSize
+        $0.preferredSize.height = Metric.titleImageSize
+      }
+      self.indicatorNode.stopAnimating()
+    }
+
     let titleImageAndtitleAndCurrentTextLayout = ASStackLayoutSpec(
       direction: .horizontal,
       spacing: 0,
       justifyContent: .start,
       alignItems: .center,
       children: [
-        self.titleImageNode.styled {
-          $0.preferredSize.width = Metric.titleImageSize
-          $0.preferredSize.height = Metric.titleImageSize
-        },
+        layoutElement,
         SpacingLayout(width: 12),
         self.titleAndCurrentTextLayoutElement(),
-      ]
+      ].compactMap { $0 }
     )
 
     return ASStackLayoutSpec(
