@@ -14,6 +14,7 @@ import DndUI
 import Then
 import Pure
 import GoogleMobileAds
+import MediaPlayer
 
 class MainViewController: BaseViewController, View, FactoryModule {
 
@@ -156,6 +157,7 @@ class MainViewController: BaseViewController, View, FactoryModule {
     self.player = AVPlayer(playerItem: playerItem)
     self.audioPlayerNode.isLoading = true
     self.player.play()
+    self.setupRemoteTransportControls()
     self.addPeriodicTimeObserver()
   }
 
@@ -169,18 +171,62 @@ class MainViewController: BaseViewController, View, FactoryModule {
     self.audioPlayerNode.isPlay = false
   }
 
+  private func setupNowPlaying(playerItem: AVPlayerItem) {
+    guard let sound = self.currentSound else { return }
+    guard let imgURL = URL(string: sound.imgURL) else { return }
+    var nowPlayingInfo = [String : Any]()
+    nowPlayingInfo[MPMediaItemPropertyTitle] = sound.name
+    do {
+      let data = try Data(contentsOf: imgURL)
+      if let image = UIImage(data: data) {
+        nowPlayingInfo[MPMediaItemPropertyArtwork] =
+          MPMediaItemArtwork(boundsSize: image.size) { size in
+            return image
+          }
+      }
+      nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = playerItem.currentTime().seconds
+      nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = playerItem.asset.duration.seconds
+      nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = self.player.rate
+      MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    } catch {
+      log.error(error)
+    }
+  }
+
+  func setupRemoteTransportControls() {
+    let commandCenter = MPRemoteCommandCenter.shared()
+    commandCenter.playCommand.addTarget { [unowned self] event in
+      if self.player.rate == 0.0 {
+        self.playSound()
+        MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = self.player.currentTime().seconds
+        return .success
+      }
+      return .commandFailed
+    }
+    commandCenter.pauseCommand.addTarget { [unowned self] event in
+      if self.player.rate == 1.0 {
+        self.pauseSound()
+        MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = self.player.currentTime().seconds
+        return .success
+      }
+      return .commandFailed
+    }
+  }
+
   private func addPeriodicTimeObserver() {
     let interval = CMTime(seconds:1.0, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
     let mainQueue = DispatchQueue.main
     self.playerObserver = player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue) { [weak self] progressTime in
       guard let self = self else { return }
-      if let totalDuration = self.player?.currentItem?.duration, !CMTimeGetSeconds(totalDuration).isNaN {
+      if let totalDuration = self.player?.currentItem?.duration, let currentItem = self.player.currentItem, !CMTimeGetSeconds(totalDuration).isNaN {
         if self.audioPlayerNode.isLoading {
           self.audioPlayerNode.isLoading = false
+          self.setupNowPlaying(playerItem: currentItem)
         }
         let totalSeconds = Int(CMTimeGetSeconds(totalDuration))
         let currentSeconds = Int(CMTimeGetSeconds(progressTime))
         if currentSeconds == totalSeconds {
+          self.audioPlayerNode.isLoading = true
           self.player.seek(to: CMTime.zero)
           self.player.play()
         }
