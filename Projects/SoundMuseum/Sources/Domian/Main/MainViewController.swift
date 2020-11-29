@@ -115,11 +115,22 @@ class MainViewController: BaseViewController, View, FactoryModule {
     self.node.backgroundColor = .gray900
     self.navigationController?.navigationBar.isHidden = true
     self.collectionNode.delegate = self
+    #if DEBUG
+    interstitial = createAndLoadDebugInterstitial()
+    #else
     interstitial = createAndLoadInterstitial()
+    #endif
+  }
+
+  private func createAndLoadDebugInterstitial() -> GADInterstitial {
+    let interstitialDebug = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+    interstitialDebug.delegate = self
+    interstitialDebug.load(GADRequest())
+    return interstitialDebug
   }
 
   private func createAndLoadInterstitial() -> GADInterstitial {
-    let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+    let interstitial = GADInterstitial(adUnitID: "ca-app-pub-7897438860609840/2517786319")
     interstitial.delegate = self
     interstitial.load(GADRequest())
     return interstitial
@@ -249,6 +260,18 @@ class MainViewController: BaseViewController, View, FactoryModule {
     if interstitial.isReady {
       self.player.pause()
       interstitial.present(fromRootViewController: self)
+    } else {
+      self.didSelectedSoundCell()
+    }
+  }
+
+  private func didSelectedSoundCell() {
+    if let sound = self.currentSound {
+      self.playSound(url: URL(string: sound.soundURL))
+      self.audioPlayerNode.setPlayerView(
+        titleImageUrl: URL(string: sound.imgURL),
+        title: sound.name
+      )
     }
   }
 
@@ -297,14 +320,12 @@ extension MainViewController: UICollectionViewDelegateFlowLayout, ASCollectionDe
 
 extension MainViewController: GADInterstitialDelegate {
   func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+    #if DEBUG
+    interstitial = createAndLoadDebugInterstitial()
+    #else
     interstitial = createAndLoadInterstitial()
-    if let sound = self.currentSound {
-      self.playSound(url: URL(string: sound.soundURL))
-      self.audioPlayerNode.setPlayerView(
-        titleImageUrl: URL(string: sound.imgURL),
-        title: sound.name
-      )
-    }
+    #endif
+    self.didSelectedSoundCell()
   }
 }
 
