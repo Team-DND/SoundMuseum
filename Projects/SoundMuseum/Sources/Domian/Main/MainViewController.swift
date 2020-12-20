@@ -130,7 +130,7 @@ class MainViewController: BaseViewController, View, FactoryModule {
   }
 
   private func createAndLoadInterstitial() -> GADInterstitial {
-    let interstitial = GADInterstitial(adUnitID: "ca-app-pub-7897438860609840/2517786319")
+    let interstitial = GADInterstitial(adUnitID: "ca-app-pub-7897438860609840/5083996059")
     interstitial.delegate = self
     interstitial.load(GADRequest())
     return interstitial
