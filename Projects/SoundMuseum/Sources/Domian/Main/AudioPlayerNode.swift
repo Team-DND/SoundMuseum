@@ -40,7 +40,7 @@ final class AudioPlayerNode: ASDisplayNode {
     $0.imageNode.imageModificationBlock = ASImageNodeTintColorModificationBlock(.white)
     $0.cornerRadius = Metric.playControlButtonSize / 2
   }
-  private let indicatorNode = ActivityIndicatorNode(style: .medium)
+  private let indicatorNode = ActivityIndicatorNode(style: .white)
 
 
   // MARK: Properties
