@@ -224,6 +224,14 @@ PODS:
   - CocoaLumberjack/Swift (3.7.0):
     - CocoaLumberjack/Core
   - Differentiator (4.0.1)
+  - FacebookCore (0.9.0):
+    - FBSDKCoreKit (~> 5.0)
+  - FBSDKCoreKit (5.15.1):
+    - FBSDKCoreKit/Basics (= 5.15.1)
+    - FBSDKCoreKit/Core (= 5.15.1)
+  - FBSDKCoreKit/Basics (5.15.1)
+  - FBSDKCoreKit/Core (5.15.1):
+    - FBSDKCoreKit/Basics
   - Firebase/Analytics (6.34.0):
     - Firebase/Core
   - Firebase/Core (6.34.0):
@@ -451,6 +459,7 @@ PODS:
 DEPENDENCIES:
   - BonMot
   - CocoaLumberjack/Swift
+  - FacebookCore
   - Firebase/Analytics
   - Firebase/Firestore
   - Firebase/Messaging
@@ -489,6 +498,8 @@ SPEC REPOS:
     - BoringSSL-GRPC
     - CocoaLumberjack
     - Differentiator
+    - FacebookCore
+    - FBSDKCoreKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -544,6 +555,8 @@ SPEC CHECKSUMS:
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
+  FBSDKCoreKit: 1d5acf7c9d7a2f92bb1a242dc60cae5b7adb91df
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
   FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
@@ -592,6 +605,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 52a79536a51b94e56d71d3e24fa6b2bc7db66136
+PODFILE CHECKSUM: c0eb3210b6dabd762b22f2ee3f75b91e0937a6e4
 
 COCOAPODS: 1.10.0

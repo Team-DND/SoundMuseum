@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import GoogleMobileAds
 import AVFoundation
+import FBSDKCoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     FirebaseApp.configure()
     GADMobileAds.sharedInstance().start(completionHandler: nil)
+    ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
     do {
       try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
       try AVAudioSession.sharedInstance().setActive(true)
@@ -26,6 +28,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     application.beginReceivingRemoteControlEvents()
 
     return true
+  }
+
+  func applicationDidBecomeActive(_ application: UIApplication) {
+    AppEvents.activateApp()
+  }
+
+  func application(
+    _ app: UIApplication,
+    open url: URL,
+    options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+  ) -> Bool {
+    ApplicationDelegate.shared.application(
+      app,
+      open: url,
+      sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+      annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+    )
   }
 
   // MARK: UISceneSession Lifecycle

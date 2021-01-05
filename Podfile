@@ -49,6 +49,7 @@ def testable_target(name)
       pod 'Firebase/Messaging'
       pod 'RxFirebase/Firestore'
       pod 'Google-Mobile-Ads-SDK'
+      pod 'FacebookCore'
     end
     yield if block_given?
 
